@@ -12,8 +12,11 @@ class Match:
                f' -- VS -- ' \
                f'Player {self.id_player_2} ({self.score_player_2} pts)'
 
-    def scoring(self, winner):
+    def scoring(self):
 
+        print(self)
+        winner = input('Choose who won this match: ')
+    
         if self.id_player_1 == winner:
             self.score_player_1 = 1
 

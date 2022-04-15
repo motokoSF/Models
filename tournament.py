@@ -1,7 +1,8 @@
 
+from match import Match
 class Tournament:
     
-    def __init__(self, id, name, date, time_control, description,
+    def __init__(self, id, name, date=None, time_control=None, description=None,
                  total_number_of_rounds=4, ongoing_round=1,
                  players=None, status='',
                  list_of_rounds=None, scores=None, opponents=None):
@@ -23,3 +24,10 @@ class Tournament:
         
     def __str__(self):
         return f'{self.name}'
+    
+    def create_match(self):
+        # Match avec le bon algo
+        # Suisse ou autre.
+        self.match =  Match(self.players[0], self.players[1])
+        self.match.scoring()
+        
