@@ -6,6 +6,7 @@ class Player:
         self.last_name = last_name
         self.gender = gender
         self.rating = 0
+        self.score = 0
 
     def __str__(self):
         return f' ID # {self.id} - {self.first_name} ' \

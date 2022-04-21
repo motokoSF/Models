@@ -14,24 +14,26 @@ if __name__ == '__main__':
     # 2 on cree les joueurs
     #tournois.players = [create_player(), create_player()]
   
-    ajout_joueur = True
-    while ajout_joueur == True:
-        réponse =  input("ajouter un joueur O/N: ")
-        if réponse == "O":
+    while True:
+        reponse =  input("ajouter un joueur O/N: ")
+        if reponse == "O":
             nouv_joueur = create_player()
             tournois.players.append(nouv_joueur)
         if len(tournois.players) in [2,4,6]:
-             r = input("ok?: ")
+             r = input("Finis d'ajouter des joueurs?: O/N")
              if r == "O":
                 break
 
         if len(tournois.players) == 8:
             break
-        else:
-            ajout_joueur = False
+        if reponse == 'N':
+            break
     
        
         
 
     # 3 On lance la creation des rounds ou match
     tournois.create_match()
+    # maintenant on peut creer les autre match jusqua la fin du tournois
+    # for in ....
+    tournois.create_other_match()
