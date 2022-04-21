@@ -8,9 +8,9 @@ class Match:
         self.score_player_2 = 0
 
     def __str__(self):
-        return f'Player {self.id_player_1} ({self.score_player_1} pts)' \
+        return f'Player {self.id_player_1}' \
                f' -- VS -- ' \
-               f'Player {self.id_player_2} ({self.score_player_2} pts)'
+               f'Player {self.id_player_2}'
 
     def scoring(self):
 
