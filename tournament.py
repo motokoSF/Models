@@ -25,7 +25,7 @@ class Tournament:
     def create_match(self):
         # Match avec le bon algo
         # Suisse ou autre.
-            
-                self.match =  Match(self.players[0], self.players[1])
+               nbre_matches = len(self.players) / 2
+                self.match =  Match(self.players)
                 self.match.scoring()
 

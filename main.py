@@ -13,16 +13,20 @@ if __name__ == '__main__':
     tournois = Tournament(input('Donner le nom du tournoi: '))
     # 2 on cree les joueurs
     #tournois.players = [create_player(), create_player()]
-    # if len(tournois.players) in [2,4,6]:
-    #     pass
-    # if len(tournois.players) == 8:
-    #     pass
+  
     ajout_joueur = True
     while ajout_joueur == True:
         réponse =  input("ajouter un joueur O/N: ")
         if réponse == "O":
             nouv_joueur = create_player()
             tournois.players.append(nouv_joueur)
+        if len(tournois.players) in [2,4,6]:
+             r = input("ok?: ")
+             if r == "O":
+                break
+
+        if len(tournois.players) == 8:
+            break
         else:
             ajout_joueur = False
     
