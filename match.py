@@ -1,29 +1,38 @@
 class Match:
 
-    def __init__(self, player_1, player_2):
-        self.status = None
-        self.player_1 = player_1
-        self.player_2 = player_2
-        self.score_player_1 = 0
-        self.score_player_2 = 0
+    def __init__(self):
+        self.score_player_1 = None
+        self.score_player_2 = None
 
     def __str__(self):
-        return f'Player {self.player_1.id}' \
-               f' -- VS -- ' \
-               f'Player {self.player_2.id}'
+        return f"scoring: {self.score_player_1[1]} -- {self.score_player_2[1]}"
+                
 
-    def scoring(self):
+    def set_score(self, id_player_1, id_player_2):
 
-        print(self)
-        winner = input('Choose who won this match: ')
+        
+        winner = int(input(f'Choose who won this match ({id_player_1}, {id_player_2}): '))
     
-        if self.player_1.id == winner:
-            self.player_1.score += 1
+        if id_player_1 == winner:
+            self.score_player_1 = (id_player_1, 1)
+            self.score_player_2 = (id_player_2, 0)
 
-        elif self.player_2.id == winner:
-            self.player_2.score += 1
-
+        elif id_player_2 == winner:
+            self.score_player_2 = (id_player_2, 1)
+            self.score_player_1 = (id_player_1, 0)
         else:
-            self.player_1.score = 0.5
-            self.player_2.score = 0.5
+            self.score_player_1 = (id_player_1, 0.5)
+            self.score_player_2 = (id_player_2, 0.5)
+
+'''
+def __init__(self, player1, player2):
+  self.score_player_1 = (player1, 0)
+  self.score_player_2 = (player2, 0)
+
+def set_score(self):
+  ...
+  if (winner == self.score_player_1[0].id):
+    self.score_player_1 = (self.score_player_1[0], 1)
+    self.score_player_2 = (self.score_player_2[0], 0)
+'''
 

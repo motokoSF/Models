@@ -3,18 +3,14 @@ from match import Match
 class Tournament:
     
     def __init__(self, id,
-                 total_number_of_rounds=4, ongoing_round=1,
-                 list_of_rounds=None, scores=None, opponents=None):
+                 list_of_rounds=None, scores=None):
 
         
 
         self.id = id
-        self.total_number_of_rounds = total_number_of_rounds
-        self.ongoing_round = ongoing_round
         self.players = []
         self.list_of_rounds = list_of_rounds
         self.scores = scores
-        self.opponents = opponents
         self.match = [] 
         
     def __str__(self):
@@ -38,7 +34,7 @@ class Tournament:
 
     def create_other_match(self):
         # a verifier que le sorting fonctionne bien
-        self.players.sort(key=lambda x: x.score, reverse=True) # sort by score
+        self.players = sorted(self.players, key=lambda x: x.get(""), reverse=True)
         # une fois le sort fais on reprend la meme logique.
         _players = []
         for player in self.players: # 0,1,2,3
@@ -48,6 +44,6 @@ class Tournament:
                 _players = []
         for match in self.match: # match1, match2
             match.scoring()
-        # match les gens avec les meme score
+        # match les gens avec les memes scores
 
                 
